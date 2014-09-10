@@ -12,6 +12,12 @@ if (Posts.find().count() === 0) {
   });
   var sacha = Meteor.users.findOne(sachaId);
   
+  // also add the ako user
+  var akoId = Meteor.users.insert({
+    profile: { name: 'Ako' }
+  });
+
+  //create some posts  
   var telescopeId = Posts.insert({
     title: 'Introducing Telescope',
     userId: sacha._id,
