@@ -1,0 +1,7 @@
+<template name="channelsList">
+  <ul>
+  	{{#each listOfChannels}}
+	<li><a href="{{pathFor 'postsChannel'}}">{{title}}</a></li>
+	{{/each}}
+  </ul>
+</template>
