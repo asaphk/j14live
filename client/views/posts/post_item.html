@@ -6,6 +6,7 @@
       <p>
         {{pluralize votes "Vote"}},
         submitted by {{author}},
+	    <img src="{{img}}" />
         <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
         {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
       </p>

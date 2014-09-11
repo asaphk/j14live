@@ -15,6 +15,18 @@
     </div>
 
     <div class="control-group">
+        <label class="control-label" for="title">Channels</label>
+        <div class="controls">
+		  <select name="channels" type="select" value="{{channels}}" multiple>
+		    {{#each channelsList}}
+			<option value="{{_id}}" {{isSelected}}>{{title}}</option>
+			{{/each}}
+		  </select>
+		  
+        </div>
+    </div>
+
+    <div class="control-group">
         <div class="controls">
             <input type="submit" value="Submit" class="btn btn-primary submit"/>
         </div>

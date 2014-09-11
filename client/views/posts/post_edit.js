@@ -6,7 +6,8 @@ Template.postEdit.events({
     
     var postProperties = {
       url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val()
+      title: $(e.target).find('[name=title]').val(),
+      channels: $(e.target).find('[name=channels]').val()
     }
     
     Posts.update(currentPostId, {$set: postProperties}, function(error) {
@@ -29,3 +30,15 @@ Template.postEdit.events({
     }
   }
 });
+
+if(Meteor.isClient) {
+  Template.postEdit.channelsList = function () {
+    return Channels.find();
+  };
+  Template.postEdit.isSelected = function () {
+     //console.log(this._id);
+     //console.log(Session.get('selectedPostId'));
+	 var post = Posts.findOne(Session.get('selectedPostId'));
+     return _.contains(post.channels, this._id) ? 'selected' : '';
+  };
+}

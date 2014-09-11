@@ -8,7 +8,7 @@ Posts.allow({
 Posts.deny({
   update: function(userId, post, fieldNames) {
     // may only edit the following two fields:
-    return (_.without(fieldNames, 'url', 'title').length > 0);
+    return (_.without(fieldNames, 'url', 'title', 'channels').length > 0);
   }
 });
 
@@ -33,7 +33,7 @@ Meteor.methods({
     }
     
     // pick out the whitelisted keys
-    var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
+    var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message','channels'), {
       userId: user._id, 
       author: user.username, 
       submitted: new Date().getTime(),
