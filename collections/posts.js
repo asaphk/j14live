@@ -1,5 +1,67 @@
 Posts = new Meteor.Collection('posts');
 
+
+var Schemas = {};
+
+Schemas.Posts = new SimpleSchema({
+    title: {
+        type: String,
+        label: "Title",
+        max: 200
+    },
+    body: {
+        type: String,
+        label: "Body",
+        max: 3000
+    },
+    url: {
+        type: String,
+        label: "URL Address"
+    },
+    img: {
+        type: String,
+        label: "IMG src",
+    },
+    orig: {
+        type: String,
+        label: "Original Source"
+    },
+    sourceId: {
+    	type: String,
+    	label: "ID at source"
+    },
+    userId: {
+    	type: String,
+    	optional: false
+    },
+    votes: {
+        type: String,
+        label: "Original Source"
+    },
+    commentsCount: {
+        type: String,
+        label: "Original Source"
+    },
+    lastCheckedOut: {
+        type: Date,
+        label: "Last date this book was checked out",
+        optional: true
+    },
+    summary: {
+        type: String,
+        label: "Brief summary",
+        optional: true,
+        max: 1000
+    },
+    published: {
+    	type: Boolean,
+    	label: "Published",
+    	optional: true,
+    }
+});
+
+Posts.attachSchema(Schemas.Posts);
+
 Posts.allow({
   update: ownsDocument,
   remove: ownsDocument

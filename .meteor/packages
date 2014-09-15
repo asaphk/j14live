@@ -12,4 +12,11 @@ accounts-password
 mrt:accounts-ui-bootstrap-dropdown
 mrt:iron-router-progress
 alanning:roles
+mizzao:bootstrap-3
+aldeed:collection2
+aldeed:autoform
+splendido:accounts-templates-core
+splendido:accounts-templates-bootstrap
+accounts-github
+accounts-facebook
 

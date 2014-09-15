@@ -1,3 +1,39 @@
+/*
+Theme Name: WP ThemingStrap
+Theme URI: http://themingstrap.com/portfolio/themingstrap-responsive-theme-framework-options/
+Author: ThemingStrap
+Author URI: http://themingstrap.com/
+
+Description:  Theming Strap is a free version of ThemingStrap Framework made for premium quality theme development. This theme is having a lot of theme functionality like manage custom logo, Fav Icon, Footer script, Social media profile etc. It is fully Powered by Bootstrap 3.0 and FontAwesom icon font. Visit http://themingstrap.com/ to get details about this theme and framework. This theme is built using code standards of twentytwelve theme & like WordPress it is free to use for personal & commercial purpose.
+
+Version: 1.0.1
+Tags: red, custom-background, custom-menu,  featured-images, flexible-header, light, post-formats, sticky-post
+
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+/************************ ThemingStrap STYLES CONTENTS ***********************/
+/*    1   =   Theming Strap Main Body Styles                                  */
+/*    2   =   Theming Strap Link Styles                                       */
+/*    3   =   Theming Strap Wrapper Styles                                    */
+/*    4   =   Theming Strap Font Styles                                       */
+/*    5   =   Theming Strap Theme Main Navigation                             */
+/*    6   =   Theming Strap Slider Styles                                     */
+/*    7   =   Theming Strap Post and Page Styles                              */
+/*    8   =   Theming Strap Sidebar Styles                                    */
+/*    9   =   Theming Strap 404 and Search Page Styles                        */
+/*    10  =   Theming Strap Comments Template Styles                          */
+/*    11  =   Theming Strap Images, Caption Alignment, Alignment Styles       */
+/*    13  =   Theming Strap Other Post Elements and Fields Styles             */
+/*    13  =   Theming Strap Other Sidebar Elements and Fields Styles          */
+/*    14  =   Theming Strap Other Styles                                      */
+/************************ ThemingStrap STYLES CONTENTS ***********************/
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,300italic,300,200italic,200,400italic,600);
+/* Theming Strap Main Body Styles
+-------------------------------------------------------------- */
+
 html {
 	-webkit-font-smoothing: antialiased;
 }

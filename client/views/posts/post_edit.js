@@ -42,3 +42,9 @@ if(Meteor.isClient) {
      return _.contains(post.channels, this._id) ? 'selected' : '';
   };
 }
+
+Template.updatePostForm.helpers({
+  editingDoc: function editingDocHelper() {
+    return Posts.findOne({_id: Session.get("selectedDocId")});
+  }
+});

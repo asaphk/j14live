@@ -23,6 +23,7 @@
     </div><!-- /.container -->
   </div><!-- /.navbar -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
+    {{> channelsList}}
     <ul class="nav navbar-nav" id="menu-menu">
       <li class="menu-item {{activeRouteClass 'home' 'newPosts'}}">
 	<a href="{{pathFor 'newPosts'}}" title="אודות">
@@ -33,8 +34,7 @@
 	<a href="{{pathFor 'bestPosts'}}" title="אודות">
 	מובילים
 	</a>
-      </li>
-      {{> channelsList}}      
+      </li>      
     {{#if currentUser}}
       <li class="menu-item {{activeRouteClass 'postSubmit'}}">
 	<a href="{{pathFor 'postSubmit'}}" title="אודות">
@@ -44,10 +44,10 @@
       <li class="menu-item dropdown">
 	{{> notifications}}
       </li>
-    {{/if}}      
-    </ul>
-    <ul class="nav pull-right">
-      <li>{{> loginButtons}}</li>
-    </ul>    
+    {{/if}}
+      <li class="menu-item dropdown">
+      {{> loginButtons}}
+      </li>
+    </ul>  
   </div>
 </template>
