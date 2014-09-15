@@ -1260,3 +1260,9 @@ footer.footer {
 	padding: 15px 0px;
 	color: #fff;
 }
+
+/** Heder fixes **/
+a.navbar-brand img { height: 50px; }
+a.navbar-brand  { padding: 0px 0px 0px 0px; }
+div.post { text-direction: rtl; }
+div#main-container { margin-top: 70px; }

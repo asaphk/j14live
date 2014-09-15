@@ -1,53 +1,37 @@
 <template name="header">
-  <section id="header-wrapper">
-    <div class="container container-center">
-      <header id="site-header" class="site-header row" role="banner">
-	<hgroup class="col-md-4">
-	  <a href="{{pathFor 'home'}}"><img src="/public/j14live-logo-96x96.png" alt="צדק חברתי - חדר המצב"></a>
-	  <h1 class="site-title"><a href="{{pathFor 'home'}}" title="צדק חברתי - חדר המצב" rel="home">צדק חברתי - חדר המצב</a></h1>
-	  <h2 class="site-description">מהפכה בשידור חי</h2>
-	</hgroup>
-      </header><!-- #site header -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{pathFor 'home'}}"><img src="/images/j14live-logo-96x96.png" alt="צדק חברתי חדר המצב"/></a>
     </div>
-  </section> <!-- #header wrapper --> 
-  <div class="navbar navbar-inverse" role="navigation" id="main-menu">
-    <div class="container">
-      <div class="navbar-header">
-	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	  <span class="sr-only">Toggle navigation</span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	</button>
-      </div>    
-    </div><!-- /.container -->
-  </div><!-- /.navbar -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    {{> channelsList}}
-    <ul class="nav navbar-nav" id="menu-menu">
-      <li class="menu-item {{activeRouteClass 'home' 'newPosts'}}">
-	<a href="{{pathFor 'newPosts'}}" title="אודות">
-	אחרונים
-	</a>
-      </li>
-      <li class="menu-item {{activeRouteClass  'bestPosts'}}">
-	<a href="{{pathFor 'bestPosts'}}" title="אודות">
-	מובילים
-	</a>
-      </li>      
-    {{#if currentUser}}
-      <li class="menu-item {{activeRouteClass 'postSubmit'}}">
-	<a href="{{pathFor 'postSubmit'}}" title="אודות">
-	שתף פוסט
-	</a>
-      </li>
-      <li class="menu-item dropdown">
-	{{> notifications}}
-      </li>
-    {{/if}}
-      <li class="menu-item dropdown">
-      {{> loginButtons}}
-      </li>
-    </ul>  
-  </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+		{{> channelsList}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if currentUser}}
+	      <li class="menu-item dropdown">
+	        {{> notifications}}
+          </li>
+          <li class="menu-item {{activeRouteClass 'loginPage'}}">
+	        <a href="#" id="logout-link" title="התנתקות">התנתקות</a>
+          </li>
+		{{else}}
+          <li class="menu-item {{activeRouteClass 'loginPage'}}">
+	        <a href="{{pathFor 'loginPage'}}" title="התחברות">התחברות</a>
+          </li>
+        {{/if}}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 </template>

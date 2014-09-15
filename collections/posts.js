@@ -9,26 +9,37 @@ Schemas.Posts = new SimpleSchema({
         label: "Title",
         max: 200
     },
-    body: {
+    excerpt: {
         type: String,
-        label: "Body",
-        max: 3000
+        label: "Excerpt",
+        max: 3000,
+		autoform: {
+		  rows: 10
+		}
     },
     url: {
         type: String,
         label: "URL Address"
     },
+    videoUrl: {
+        type: String,
+        label: "Video URL Address",
+		optional: true
+    },
     img: {
         type: String,
         label: "IMG src",
+		optional: true
     },
-    orig: {
+    feedId: {
         type: String,
-        label: "Original Source"
+        label: "Feed ID",
+		denyUpdate: true
     },
-    sourceId: {
+    originalId: {
     	type: String,
-    	label: "ID at source"
+    	label: "ID at feed source",
+		denyUpdate: true
     },
     userId: {
     	type: String,
@@ -36,27 +47,27 @@ Schemas.Posts = new SimpleSchema({
     },
     votes: {
         type: String,
-        label: "Original Source"
+        label: "Votes",
+		denyUpdate: true
     },
     commentsCount: {
         type: String,
-        label: "Original Source"
+        label: "Comments",
+		denyUpdate: true
     },
-    lastCheckedOut: {
+    originalPostDate: {
         type: Date,
-        label: "Last date this book was checked out",
-        optional: true
+        label: "Original Post Date"
     },
-    summary: {
-        type: String,
-        label: "Brief summary",
-        optional: true,
-        max: 1000
-    },
-    published: {
-    	type: Boolean,
-    	label: "Published",
-    	optional: true,
+    channels: {
+        type: [String],
+        autoform: {
+		  options: function () {
+		    return Channels.find().map(function (c) {
+			  return {label: c.name, value: c._id};
+			});
+		  }
+		}
     }
 });
 
