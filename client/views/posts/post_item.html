@@ -1,57 +1,57 @@
 <template name="postItem">
 <div class="postWrapper col-md-4 col-xs-12">
-<div class="thumbnail">
-  <a href="{{pathFor 'postPage'}}">
-    {{#if img}}
-    <img src="{{img}}" class="attachment-slide-image wp-post-image" alt="responsive-wix">
-	{{else}}
-    <img src="/images/logo960.jpg" class="attachment-slide-image wp-post-image" alt="responsive-wix">	
-	{{/if}}
-  </a>
-  <span class="post-format-icon standard">
-    <i class="fa fa-file-text-o"></i>
-  </span>
-</div>
-<div id="post-60" class="post-60 post type-post status-publish format-standard has-post-thumbnail hentry category-themes tag-black tag-custom-background tag-custom-colors tag-custom-menu tag-dark tag-featured-images tag-left-sidebar tag-light tag-one-column tag-post-formats tag-right-sidebar tag-sticky-post tag-theme-options tag-threaded-comments tag-three-columns tag-translation-ready tag-two-columns tag-white post-item media post-standard">
-  <h3><a href="{{pathFor 'postPage'}}">{{title}}</a></h3>
-  <p>{{excerpt}}</p>
-  <div class="clearfix"></div>
-  <ul class="post-meta list-unstyled list-inline">
-	<li>
-	  <span class="published-date">
-		<span class="glyphicon glyphicon-calendar"></span>
-		<a href="{{url}}">
-		  <time class="entry-date" datetime="{{postDate}}">{{postDate}}</time>
-		</a>
-      </span>
-	</li>
-	<li>
-	  <span class="byline">
-		<span class="glyphicon glyphicon-user"></span>
-		<span class="author vcard">
-		  <a class="url fn n" href="{{postAuthor}}" title="View all posts by {{author}}" rel="author">{{author}}</a>
-		</span>
+	<div class="thumbnail">
+	  <a href="{{pathFor 'postPage'}}">
+	    {{#if img}}
+	    <img src="{{img}}" class="attachment-slide-image wp-post-image" alt="responsive-wix">
+		{{else}}
+	    <img src="/images/logo960.jpg" class="attachment-slide-image wp-post-image" alt="responsive-wix">	
+		{{/if}}
+	  </a>
+	  <span class="post-format-icon standard">
+	    <i class="fa fa-file-text-o"></i>
 	  </span>
-	</li>
-	<li>
-	  <span class="comments-link">
-	    <span class="glyphicon glyphicon-comment"></span>
-		<a href="{{url}}"> תגובות</a>
+	</div>
+	<div id="post-60" class="post-60 post type-post status-publish format-standard has-post-thumbnail hentry category-themes tag-black tag-custom-background tag-custom-colors tag-custom-menu tag-dark tag-featured-images tag-left-sidebar tag-light tag-one-column tag-post-formats tag-right-sidebar tag-sticky-post tag-theme-options tag-threaded-comments tag-three-columns tag-translation-ready tag-two-columns tag-white post-item media post-standard">
+	  <h3><a href="{{pathFor 'postPage'}}">{{title}}</a></h3>
+	  <p>{{excerpt}}</p>
+	  <div class="clearfix"></div>
+	  <ul class="post-meta list-unstyled list-inline">
+		<li>
+		  <span class="published-date">
+			<span class="glyphicon glyphicon-calendar"></span>
+			<a href="{{url}}">
+			  <time class="entry-date" datetime="{{postDate}}">{{postDate}}</time>
+			</a>
+	      </span>
+		</li>
+		<li>
+		  <span class="byline">
+			<span class="glyphicon glyphicon-user"></span>
+			<span class="author vcard">
+			  <a class="url fn n" href="{{postAuthor}}" title="View all posts by {{author}}" rel="author">{{author}}</a>
+			</span>
+		  </span>
+		</li>
+		<li>
+		  <span class="comments-link">
+		    <span class="glyphicon glyphicon-comment"></span>
+			<a href="{{url}}"> תגובות</a>
+		  </span>
+		</li>
+	  </ul>	
+	  <div class="templatetags">
+	    <span class="cat-post">
+	      <span class="glyphicon glyphicon-folder-open"></span> 
+		  {{postChannel}}
+	    </span>
+	  </div>
+	  <span class="tags-post">
+		<span class="glyphicon glyphicon-tag"></span>
+		{{postTags}}
 	  </span>
-	</li>
-  </ul>	
-  <div class="templatetags">
-    <span class="cat-post">
-      <span class="glyphicon glyphicon-folder-open"></span> 
-	  {{postChannel}}
-    </span>
-  </div>
-  <span class="tags-post">
-	<span class="glyphicon glyphicon-tag"></span>
-	{{postTags}}
-  </span>
-  
-  <div class="clearfix"><a href="{{pathFor 'postEdit'}}">Edit</a></div>
-</div>
+	  
+	  <div class="clearfix"><a href="{{pathFor 'postEdit'}}">Edit</a></div>
+	</div>
 </div>
 </template>

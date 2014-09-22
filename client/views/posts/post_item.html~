@@ -1,22 +1,27 @@
 <template name="postItem">
+<div class="postWrapper col-md-4 col-xs-12">
 <div class="thumbnail">
-  <a href="{{url}}">
-    <img width="506" height="380" src="{{img}}" class="attachment-slide-image wp-post-image" alt="responsive-wix">
+  <a href="{{pathFor 'postPage'}}">
+    {{#if img}}
+    <img src="{{img}}" class="attachment-slide-image wp-post-image" alt="responsive-wix">
+	{{else}}
+    <img src="/images/logo960.jpg" class="attachment-slide-image wp-post-image" alt="responsive-wix">	
+	{{/if}}
   </a>
   <span class="post-format-icon standard">
     <i class="fa fa-file-text-o"></i>
   </span>
 </div>
 <div id="post-60" class="post-60 post type-post status-publish format-standard has-post-thumbnail hentry category-themes tag-black tag-custom-background tag-custom-colors tag-custom-menu tag-dark tag-featured-images tag-left-sidebar tag-light tag-one-column tag-post-formats tag-right-sidebar tag-sticky-post tag-theme-options tag-threaded-comments tag-three-columns tag-translation-ready tag-two-columns tag-white post-item media post-standard">
-  <h3>{{title}}</h3>
-  <p>{{body}}</p>
+  <h3><a href="{{pathFor 'postPage'}}">{{title}}</a></h3>
+  <p>{{excerpt}}</p>
   <div class="clearfix"></div>
   <ul class="post-meta list-unstyled list-inline">
 	<li>
 	  <span class="published-date">
 		<span class="glyphicon glyphicon-calendar"></span>
-		<a href="http://teachersday.org.il/responsive/?p=60">
-		  <time class="entry-date" datetime="2014-09-02T04:35:02+00:00">{{postDate}}</time>
+		<a href="{{url}}">
+		  <time class="entry-date" datetime="{{postDate}}">{{postDate}}</time>
 		</a>
       </span>
 	</li>
@@ -24,14 +29,14 @@
 	  <span class="byline">
 		<span class="glyphicon glyphicon-user"></span>
 		<span class="author vcard">
-		  <a class="url fn n" href="{{postAuthor}}" title="View all posts by tailor" rel="author">{{author}}</a>
+		  <a class="url fn n" href="{{postAuthor}}" title="View all posts by {{author}}" rel="author">{{author}}</a>
 		</span>
 	  </span>
 	</li>
 	<li>
 	  <span class="comments-link">
 	    <span class="glyphicon glyphicon-comment"></span>
-		<a href="http://teachersday.org.il/responsive/?p=60#respond" title="תגובה לפוסט: &quot;PR News – Custom Solution Pinterest Style&quot;‏"> Leave a comment</a>
+		<a href="{{url}}"> תגובות</a>
 	  </span>
 	</li>
   </ul>	
@@ -45,7 +50,8 @@
 	<span class="glyphicon glyphicon-tag"></span>
 	{{postTags}}
   </span>
-  {{#if ownPost}}
-  <div class="clearfix"><a href="{{pathFor 'postEdit'}}">Edit</a></div>{{/if}}
+  
+  <div class="clearfix"><a href="{{pathFor 'postEdit'}}">Edit</a></div>
+</div>
 </div>
 </template>
