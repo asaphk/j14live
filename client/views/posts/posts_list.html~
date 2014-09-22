@@ -5,7 +5,8 @@
     {{/each}}
     
     {{#if nextPath}}
-      <a class="load-more clearfix" href="{{nextPath}}">Load more</a>
+	<div class="clearfix visible-md-block"></div>
+      <a class="load-more clearfix" href="{{nextPath}}">פוסטים נוספים</a>
     {{else}}
       {{#unless ready}}
         {{> spinner}}
