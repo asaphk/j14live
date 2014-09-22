@@ -520,7 +520,6 @@ html[xmlns] .slides {
 }
 .post {
   overflow: visible;
-  direction: rtl;
 }
 .post-item {
   display: block;
