@@ -1,8 +1,7 @@
 // Fixture data
 if (Meteor.users.find().count() === 0) {
   var editorId = Meteor.users.insert({
-    profile: { name: 'Editor' },
-	email: "editor@j14l.org.il"
+    email: "editor@j14l.org.il"
   });
   Roles.addUsersToRoles(editorId, ['editor']);
 }

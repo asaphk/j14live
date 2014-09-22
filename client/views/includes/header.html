@@ -22,6 +22,11 @@
 	      <li class="menu-item dropdown">
 	        {{> notifications}}
           </li>
+		  {{#if isInRole 'editor'}}
+          <li class="menu-item">
+	        <a href="#" id="editor-link" title="Editor">עורך</a>
+          </li>
+		  {{/if}}
           <li class="menu-item {{activeRouteClass 'loginPage'}}">
 	        <a href="#" id="logout-link" title="התנתקות">התנתקות</a>
           </li>

@@ -6,6 +6,14 @@ Meteor.publish('singlePost', function(id) {
   return id && Posts.find(id);
 });
 
+Meteor.publish('profiles', function(id) {
+  return Profiles.find({});
+});
+
+Meteor.publish('singleProfile', function(id) {
+  return Profiles.find({user: id});
+});
+
 Meteor.publish('postsByChannel', function(id) {
   return Posts.find({channels: id});
 });
