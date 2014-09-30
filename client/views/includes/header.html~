@@ -24,7 +24,7 @@
           </li>
 		  {{#if isInRole 'editor'}}
           <li class="menu-item">
-	        <a href="#" id="editor-link" title="Editor">עורך</a>
+	        <a href="{{pathFor 'myChannels'}}" id="editor-link" title="My Channel">My Channel</a>
           </li>
 		  {{/if}}
           <li class="menu-item {{activeRouteClass 'loginPage'}}">
