@@ -29,14 +29,6 @@ Schema.Profiles = new SimpleSchema({
 
 Profiles.attachSchema(Schema.Profiles);
 
-/*
-//tailor.vj@gmail.com: TODO: delete if unnecessary
-if(Meteor.isClient) {
-  Template.channelsList.listOfChannels = function () {
-    return Channels.find();
-  };
-}
-*/
 if (Meteor.isClient) {
   Meteor.subscribe('profiles');
 }
