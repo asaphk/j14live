@@ -27,7 +27,7 @@
 	        <a href="{{pathFor 'myChannels'}}" id="editor-link" title="My Channel">My Channel</a>
           </li>
           <li class="menu-item">
-	        <a href="{{pathFor 'profileUpdate'}}" id="profile-link" title="My Profile">My Profile</a>
+	        <a href="/update-profile/{{currentUser._id}}/edit" id="profile-link" title="My Profile">My Profile</a>
           </li>
 
 		  {{/if}}
