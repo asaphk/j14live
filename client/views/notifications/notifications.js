@@ -10,6 +10,9 @@ Template.notifications.helpers({
 Template.notification.helpers({
   notificationPostPath: function() {
     return Router.routes.postPage.path({_id: this.postId});
+  },
+  notificationPostTitle: function() {
+    return Posts.findOne({_id: this.postId}).title;
   }
 })
 

@@ -1,7 +1,11 @@
 Notifications = new Meteor.Collection('notifications');
 
+
 Notifications.allow({
-  update: ownsDocument
+  update: ownsDocument,
+  insert: function (userId,doc) {
+      return true; 
+    }
 });
 
 createCommentNotification = function(comment) {

@@ -1,6 +1,5 @@
 Posts = new Meteor.Collection('posts');
 
-
 var Schemas = {};
 
 Schemas.Posts = new SimpleSchema({
@@ -69,3 +68,34 @@ Schemas.Posts = new SimpleSchema({
 });
 
 Posts.attachSchema(Schemas.Posts);
+
+// we listen to this collection,
+// and set notifications when new posts arrive:
+Posts.after.insert(function (userId, doc) {
+  //console.log('new post with id: ' + this._id);
+  Profiles.find({channels: {$in: this.channels}}).forEach( function(profile) {
+    //console.log(profile);
+	Notifications.insert({
+      userId: profile.user,
+      postId: doc._id,
+      commentId: '0',
+      commenterName: '0',
+      read: false
+    });
+  });
+});
+
+Posts.after.update(function (userId, doc) {
+  //console.log('updated post with id: ' + doc._id);
+  //console.log(doc);
+  Profiles.find({channels: {$in: doc.channels}}).forEach( function(profile) {
+    //console.log(profile);
+	Notifications.insert({
+      userId: profile.user,
+      postId: doc._id,
+      commentId: '0',
+      commenterName: '0',
+      read: false
+    });
+  });
+});
