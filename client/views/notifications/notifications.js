@@ -14,10 +14,10 @@ Template.notification.helpers({
   notificationPostTitle: function() {
     return Posts.findOne({_id: this.postId}).title;
   }
-})
+});
 
 Template.notification.events({
   'click a': function() {
     Notifications.update(this._id, {$set: {read: true}});
   }
-})
+});
