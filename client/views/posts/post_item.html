@@ -1,7 +1,7 @@
 <template name="postItem">
 <div class="postWrapper col-md-3 col-xs-12">
 	<div class="thumbnail">
-	  <a href="{{pathFor 'postPage'}}">
+	  <a href="{{url}}" target="_blank">
 	    {{#if img}}
 	    <img src="{{img}}" class="attachment-slide-image wp-post-image" alt="responsive-wix">
 		{{else}}
@@ -13,7 +13,7 @@
 	  </span>
 	</div>
 	<div id="post-60" class="post-60 post type-post status-publish format-standard has-post-thumbnail hentry category-themes tag-black tag-custom-background tag-custom-colors tag-custom-menu tag-dark tag-featured-images tag-left-sidebar tag-light tag-one-column tag-post-formats tag-right-sidebar tag-sticky-post tag-theme-options tag-threaded-comments tag-three-columns tag-translation-ready tag-two-columns tag-white post-item media post-standard">
-	  <h3><a href="{{pathFor 'postPage'}}">{{title}}</a></h3>
+	  <h3><a href="{{url}}" target="_blank">{{title}}</a></h3>
 	  <p>{{excerpt}}</p>
 	  <div class="clearfix"></div>
 	  <ul class="post-meta list-unstyled list-inline">
@@ -50,8 +50,9 @@
 		<span class="glyphicon glyphicon-tag"></span>
 		{{postTags}}
 	  </span>
-	  
-	  <div class="clearfix"><a href="{{pathFor 'postEdit'}}">Edit</a></div>
+	    {{#if isInRole 'editor'}}
+	    <div class="clearfix"><a href="{{pathFor 'postEdit'}}">Edit</a></div>
+		{{/if}}
 	</div>
 </div>
 </template>
