@@ -6,19 +6,20 @@ Schemas.Posts = new SimpleSchema({
     title: {
         type: String,
         label: "Title",
-        max: 200
+		optional: true
     },
     excerpt: {
         type: String,
         label: "Excerpt",
-        max: 2000,
+		optional: true,
 		autoform: {
 		  rows: 5
 		}
     },
     url: {
         type: String,
-        label: "URL Address"
+        label: "URL Address",
+		optional: true
     },
     videoUrl: {
         type: String,
@@ -32,11 +33,13 @@ Schemas.Posts = new SimpleSchema({
     },
     feedId: {
         type: String,
-        label: "Feed ID"
+        label: "Feed ID",
+        optional: true
     },
     originalId: {
     	type: String,
-    	label: "ID at feed source"
+    	label: "ID at feed source",
+		optional: true
     },
     userId: {
     	type: String,
@@ -71,6 +74,7 @@ Posts.attachSchema(Schemas.Posts);
 
 // we listen to this collection,
 // and set notifications when new posts arrive:
+/*
 Posts.after.insert(function (userId, doc) {
   //console.log('new post with id: ' + this._id);
   Profiles.find({channels: {$in: this.channels}}).forEach( function(profile) {
@@ -99,3 +103,4 @@ Posts.after.update(function (userId, doc) {
     });
   });
 });
+*/

@@ -26,12 +26,13 @@ Schema.Channels = new SimpleSchema({
 
 Channels.attachSchema(Schema.Channels);
 
+
+if (Meteor.isClient) {
+  Meteor.subscribe('channels');
+}
+
 if(Meteor.isClient) {
   Template.channelsList.listOfChannels = function () {
     return Channels.find();
   };
-}
-
-if (Meteor.isClient) {
-  Meteor.subscribe('channels');
 }

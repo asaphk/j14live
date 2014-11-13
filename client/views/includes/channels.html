@@ -1,7 +1,7 @@
 <template name="channelsList">
     {{#each listOfChannels}}
 	<li class="menu-item">
-	  <a href="{{pathFor 'postsChannel'}}" title="{{title}}">{{title}}</a>
+	  <a href="{{pathFor 'postsChannel'}}" title="{{title}}">{{name}}</a>
 	</li>
 	{{/each}}
 </template>
